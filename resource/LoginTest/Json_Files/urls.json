@@ -1,0 +1,9 @@
+{
+	"urls": [
+		{
+			"edubaseurl": "https://s-www.myngconnect.com/login/chooseMainUI.spr",
+			"urlforinvalid2": "https://s-www.myngconnect.com/login/teacher/login.spr?login_error=2",
+			"urlforvalid_edu": "https://s-www.myngconnect.com/html/ecosystem.spr"
+		}
+	]
+}

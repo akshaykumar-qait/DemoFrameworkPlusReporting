@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="49468" started-at="2017-08-27T12:12:46Z" finished-at="2017-08-27T12:13:35Z">
+    <groups>
+    </groups>
+    <test name="Login" duration-ms="49468" started-at="2017-08-27T12:12:46Z" finished-at="2017-08-27T12:13:35Z">
+      <class name="Tests.Login.LoginTest">
+        <test-method status="PASS" signature="Initializer()[pri:0, instance:Tests.Login.LoginTest@57baeedf]" name="Initializer" is-config="true" duration-ms="3888" started-at="2017-08-27T05:12:46Z" finished-at="2017-08-27T05:12:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initializer -->
+        <test-method status="PASS" signature="TestA_user_invalid_login_check()[pri:0, instance:Tests.Login.LoginTest@57baeedf]" name="TestA_user_invalid_login_check" duration-ms="20221" started-at="2017-08-27T05:12:50Z" finished-at="2017-08-27T05:13:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestA_user_invalid_login_check -->
+        <test-method status="PASS" signature="TestB_user_login_check()[pri:0, instance:Tests.Login.LoginTest@57baeedf]" name="TestB_user_login_check" duration-ms="12344" started-at="2017-08-27T05:13:10Z" depends-on-methods="Tests.Login.LoginTest.TestA_user_invalid_login_check" finished-at="2017-08-27T05:13:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestB_user_login_check -->
+        <test-method status="PASS" signature="TestC_user_logout_check()[pri:0, instance:Tests.Login.LoginTest@57baeedf]" name="TestC_user_logout_check" duration-ms="10491" started-at="2017-08-27T05:13:22Z" depends-on-methods="Tests.Login.LoginTest.TestB_user_login_check" finished-at="2017-08-27T05:13:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestC_user_logout_check -->
+        <test-method status="PASS" signature="Closer()[pri:0, instance:Tests.Login.LoginTest@57baeedf]" name="Closer" is-config="true" duration-ms="2417" started-at="2017-08-27T05:13:33Z" finished-at="2017-08-27T05:13:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closer -->
+      </class> <!-- Tests.Login.LoginTest -->
+    </test> <!-- Login -->
+  </suite> <!-- Suite1 -->
+</testng-results>

@@ -1,0 +1,12 @@
+{
+	"locators": [
+		{
+			"edulogo_id": "imgEducators",
+			"back_id": "imgBack",
+			"logout_css": "div.logout.icon.logout-ctrl.header-sprite.custom-tooltip",
+			"edutextf_css": "input.txtField",
+			"edulogin_id": "imgLogin",
+			"edupass_id": "passwordField"
+		}
+		]
+}
