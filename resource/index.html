@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            function changeFunc() {
+                var selectBox = document.getElementById("selectBox");
+                var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+                //alert(selectedValue);
+                if(selectedValue=="Suite 1")
+                {
+                    document.getElementById("s1").style.display = 'block';
+                    document.getElementById("s2").style.display = 'none';
+                    document.getElementById("s3").style.display = 'none'
+                }
+                else if(selectedValue=="Suite 2")
+                {
+                    document.getElementById("s2").style.display = 'block';
+                   document.getElementById("s1").style.display = 'none';
+                   document.getElementById("s3").style.display = 'none';
+                }
+                else if(selectedValue=="Suite 3")
+                {       document.getElementById("s3").style.display = 'block';
+                        document.getElementById("s2").style.display = 'none';
+                   document.getElementById("s1").style.display = 'none';
+                }
+                else{
+                      document.getElementById("s1").style.display = 'none';
+            document.getElementById("s2").style.display = 'none';
+               document.getElementById("s3").style.display = 'none';
+                    
+                }
+            }
+            </script>
+    </head>
+    <body>
+        <div>
+            <h2>Select the Suite</h2><br>
+            <select  id="selectBox" onchange="changeFunc();">
+              <option value="None">None</option>
+              <option value="Suite 1">Suite 1</option>
+              <option value="Suite 2">Suite 2</option>
+              <option value="Suite 3">Suite 3</option>
+            </select>
+        </div>
+        
+        <div id="s1" style="display: none">
+            
+            <h3>Suite 1</h3>
+            <h4>method1</h4>
+                <ul>
+                    <li>Status:  Suite 1 status</li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            <h4>method2</h4>
+                <ul>
+                    <li>Status:</li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            
+        </div>
+         <div id="s2" style="display: none">
+            
+             <h3>Suite 2</h3>
+            <h4>method1</h4>
+                <ul>
+                 <li> Status:  <p style="color: green">   Suite 2 status </p> </li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            <h4>method2</h4>
+                <ul>
+                    <li>Status:</li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            
+        </div>
+         <div id="s3" style="display: none">
+            
+            <h3>Suite 3</h3>
+            <h4>method1</h4>
+                <ul>
+                    <li>Status:  Suite 3 status</li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            <h4>method2</h4>
+                <ul>
+                    <li>Status:</li>
+                    <li>Time Taken:</li>
+                    <li>Exception:</li>
+                </ul>
+            
+        </div>
+    </body>
+</html>
