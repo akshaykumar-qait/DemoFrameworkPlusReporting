@@ -68,33 +68,45 @@ public class HttpCalls {
 	public static void main(String Agrs[]) throws Exception
 	{
 
-		////////////////////////////////////////// open a browser ////////////////////////////////////////
+		////////////////////////////////////////// open a browser
+		////////////////////////////////////////// ////////////////////////////////////////
 		String data = "{\"desiredCapabilities\" : {\"browserName\": \"chrome\"} }";
 		HttpCalls object = new HttpCalls();
-		HttpURLConnection conn = object.getConnection("http://localhost:4444/wd/hub/session","POST",data);	
-		String sessionId = (String) ((JSONObject)(object.getJson(conn))).get("sessionId");
-		
-		
-		///////////////////////////////////// hit a url ///////////////////////////////////////////////////
-		JSONObject temp = new JSONObject();
+		HttpURLConnection conn = object.getConnection("http://localhost:4444/wd/hub/session", "POST", data);
+		String sessionId = (String) ((JSONObject) (object.getJson(conn))).get("sessionId");
+
+		///////////////////////////////////// hit a url
+		////////////////////////////////////////////////////////////////////////////////////////
+		JSONObject temp2 = null,temp = new JSONObject();
 		temp.putIfAbsent("url", "https://www.google.com");
-		conn = object.getConnection("http://localhost:4444/wd/hub/session/"+sessionId+"/url", "POST", temp.toJSONString());		
-		
-		
-		///////////////////////////////////// get current url //////////////////////////////////////////
-		
-		conn = object.getConnection("http://localhost:4444/wd/hub/session/"+sessionId+"/url", "GET","null");	
-		String currenturl = (String) ((JSONObject)(object.getJson(conn))).get("value");
-		System.out.println(currenturl);		
-		
-		///////////////////////////////////find element on the page /////////////////////////////////////
-		
-		
+		conn = object.getConnection("http://localhost:4444/wd/hub/session/" + sessionId + "/url", "POST",
+				temp.toJSONString());
+
+		///////////////////////////////////// get current url
+		///////////////////////////////////////////////////////////////////////////////
+
+		conn = object.getConnection("http://localhost:4444/wd/hub/session/" + sessionId + "/url", "GET", "null");
+		String currenturl = (String) ((JSONObject) (object.getJson(conn))).get("value");
+		System.out.println(currenturl);
+
+		/////////////////////////////////// find element on the page
+		////////////////////////////////////////////////////////////////////////
+
 		temp = new JSONObject();
 		temp.put("using", "id");
-		temp.put("value", "lst-ib");
-		conn = object.getConnection("http://localhost:4444/wd/hub/session/"+sessionId+"/element", "POST",temp.toJSONString());	
-		object.getJson(conn);
+		temp.put("value", "gsri_ok0");
+		
+		
+		conn = object.getConnection("http://localhost:4444/wd/hub/session/" + sessionId + "/element", "POST",
+				temp.toJSONString());
+		temp2 = object.getJson(conn);
+		String value = temp2.get("value").toString();
+		temp2 = (JSONObject) new JSONParser().parse(value);
+		String elementId = (String) temp2.get("ELEMENT");
+		System.out.println(elementId);
+		
+	     ///////////////////////////////////////// click on the element ////////////////////
+		conn = object.getConnection("http://127.0.0.1:4444/wd/hub/session/"+sessionId+"/element/"+elementId+"/click", "POST", temp.toJSONString());
 		
 	}
 	
